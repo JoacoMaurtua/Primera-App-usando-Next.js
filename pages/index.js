@@ -1,13 +1,13 @@
 //import React from 'react' --> ESTO YA NO ES NECESARIO
-import Navbar from './components/navbar';
+import Layout from './components/layout';
+import Title from './components/title';
 
 const index = () => {
   return (
-    <div>
-      <Navbar/>
-      <h1>Home page</h1>
+    <Layout>
+      <Title>Home page</Title>
       <p>Aprendamos Next.js</p>
-    </div>
+    </Layout>
   )
 }
 

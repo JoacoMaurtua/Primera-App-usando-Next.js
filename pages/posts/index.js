@@ -1,12 +1,13 @@
 import React from 'react'
 import Navbar from '../components/navbar';
+import Title from '../components/title';
+import Layout from '../components/layout';
 
 const users = () => {
   return (
-    <div>
-      <Navbar/>
-      <h1>Post Page</h1>
-    </div>
+    <Layout>
+      <Title>Post Page</Title>
+    </Layout>
   )
 }
 
