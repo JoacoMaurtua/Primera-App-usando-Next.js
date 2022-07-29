@@ -61,7 +61,22 @@ export default User;
 
 //static paths para rutas dinamicas
 export async function getStaticPaths() {
-  const paths = [{ params: { id: '1' } }, { params: { id: '2' } }];
+
+  //const paths = [{ params: { id: '1' } }, { params: { id: '2' } }]; --> Metodo estatico
+
+  //mejor practica:
+  const { data } = await axios.get(
+    'https://jsonplaceholder.typicode.com/users'
+  );
+
+  const users = data;
+
+  const paths = users.map((user)=>{
+    return{
+      params:{id: `${user.id}`}
+    }
+  });
+
   return {
     paths, //determina cuales son los paths prerenderizados
     fallback: true, //si existe la posibilidad de que se agreguen mas usuarios, fallback debe ser true
