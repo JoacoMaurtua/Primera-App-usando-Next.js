@@ -4,8 +4,10 @@ import Layout from '../components/layout';
 import axios from 'axios';
 import Link from 'next/link';
 
-const posts = () => {
-  const [posts, setPosts] = useState([]);
+const posts = ({posts}) => {
+
+  //***ESTE METODO ES client Side Generation(CSG)***
+  /* const [posts, setPosts] = useState([]);
 
   useEffect(()=>{
     const fetchPosts = async () =>{
@@ -15,7 +17,7 @@ const posts = () => {
     fetchPosts();
   },[]);
 
-  console.log('posts:',posts);
+  console.log('posts:',posts); */
   
   return (
     <Layout>
@@ -34,6 +36,19 @@ const posts = () => {
       </div>
     </Layout>
   )
+};
+
+export default posts;
+
+//***ESTE ES EL METODO PARA HACER  Server Side Generation(SSG)***
+
+export async function getServerSideProps(){ //Esta funcion corre del lado del servidor, no del cliente(browser)
+  const {data} = await axios.get('https://jsonplaceholder.typicode.com/posts');
+  const posts = data;
+  return {
+    props:{
+      posts
+    }
+  }
 }
 
-export default posts
