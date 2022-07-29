@@ -16,6 +16,17 @@ const navbar = () => {
       <Link href='/posts/[id]' as={`/posts/${5}`}>
         <a>Posts #5</a>
       </Link>
+      <style jsx>
+        {`
+          nav{
+            padding-top: 10px;
+          }
+          
+          a{
+            padding: 0 10px;
+          }
+        `}
+      </style>
     </nav>
   )
 };

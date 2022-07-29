@@ -7,6 +7,17 @@ const index = () => {
     <Layout>
       <Title>Home page</Title>
       <p>Aprendamos Next.js</p>
+      <style>
+        {`
+          p{
+            color: darkgray;
+            cursor: pointer;
+          }
+          p:hover{
+            color: darkred;
+          }
+        `}
+      </style>
     </Layout>
   )
 }
