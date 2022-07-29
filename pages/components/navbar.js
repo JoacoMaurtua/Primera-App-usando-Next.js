@@ -12,10 +12,6 @@ const navbar = () => {
       <Link href='/posts'>
         <a>Posts</a>
       </Link>
-      {/* Ejemplo de rutas dinamicas */}
-      <Link href='/posts/[id]' as={`/posts/${5}`}>
-        <a>Posts #5</a>
-      </Link>
       <style jsx>
         {`
           nav{
