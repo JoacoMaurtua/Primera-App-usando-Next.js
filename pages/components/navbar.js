@@ -20,8 +20,9 @@ const navbar = () => {
         {`
           nav{
             padding-top: 10px;
+            margin: 2rem 0;
           }
-          
+
           a{
             padding: 0 10px;
           }
