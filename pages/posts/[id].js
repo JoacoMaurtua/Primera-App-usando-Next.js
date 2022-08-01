@@ -1,11 +1,15 @@
-import Navbar from '../components/navbar';
+import Head from 'next/head';
 import Title from '../components/title';
 import Layout from '../components/layout';
 import axios from 'axios';
 
-const post1 = ({ post }) => {
+const Post = ({ post }) => {
   return (
     <Layout>
+      <Head>
+        <title>Post #{post.id}</title>
+        <meta name="description" content="Este es un curso basico de next.js"/>
+      </Head>
       <Title>Post Details</Title>
       <div className="card">
         <h2>{post.title}</h2>
@@ -45,7 +49,7 @@ const post1 = ({ post }) => {
   );
 };
 
-export default post1;
+export default Post;
 
 export async function getServerSideProps({ params }) {
   //objeto por defecto que te devuelve el param de la ruta

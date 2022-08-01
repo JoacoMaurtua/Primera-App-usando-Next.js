@@ -24,6 +24,7 @@ const posts = ({posts}) => {
     <Layout>
       <Head>
         <title>Landing page de posts</title>
+        <meta name="description" content="Este es un curso basico de next.js"/>
       </Head>
       <Title>Post Page</Title>
       <div className = 'grid'>

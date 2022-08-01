@@ -3,10 +3,15 @@ import Title from '../components/title';
 import Layout from '../components/layout';
 import axios from 'axios';
 import Link from 'next/link';
+import Head from 'next/head';
 
 const users = ({ users }) => {
   return (
     <Layout>
+       <Head>
+        <title>Landing page de users</title>
+        <meta name="description" content="Este es un curso basico de next.js"/>
+      </Head>
       <Title>Users Page</Title>
       <div className="grid">
         {users.map((user) => {

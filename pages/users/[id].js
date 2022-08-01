@@ -2,6 +2,7 @@ import Title from '../components/title';
 import Layout from '../components/layout';
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 const User = ({ user }) => {
   const router = useRouter();
@@ -12,6 +13,10 @@ const User = ({ user }) => {
 
   return (
     <Layout>
+      <Head>
+        <title>User #{user.id}</title>
+        <meta name="description" content="Este es un curso basico de next.js"/>
+      </Head>
       <Title>User ID {user.id}</Title>
       <div className="card">
         <h3>User</h3>
@@ -65,10 +70,8 @@ export async function getStaticPaths() {
   //const paths = [{ params: { id: '1' } }, { params: { id: '2' } }]; --> Metodo estatico
 
   //mejor practica:
-  const { data } = await axios.get(
-    'https://jsonplaceholder.typicode.com/users'
-  );
-
+  const { data } = await axios.get( 'https://jsonplaceholder.typicode.com/users');
+   
   const users = data;
 
   const paths = users.map((user)=>{
